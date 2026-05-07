@@ -23,7 +23,7 @@ namespace Mod.CustomCampaigns
         //Mod Details
         private const string modGUID = "Distance.CustomCampaigns";
         private const string modName = "Custom Campaigns";
-        private const string modVersion = "1.0.0";
+        private const string modVersion = "1.1.0";
 
         //Config Entries
 

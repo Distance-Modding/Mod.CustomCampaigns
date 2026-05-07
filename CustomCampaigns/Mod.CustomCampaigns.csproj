@@ -64,8 +64,10 @@
     <Compile Include="Patches\Assembly-CSharp\LevelGridMenu\AddEntry.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelGridMenu\CreateEntries.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelGridMenu\SetDisplayedInfoForSelectedPlaylist.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelLoadingOverlay\SetMainTexture.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelPlaylist\Load.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelPlaylist\Create.cs" />
+    <Compile Include="Patches\Assembly-CSharp\SectorPosterLogic\Start.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\CreateCampaignLogic.cs" />
