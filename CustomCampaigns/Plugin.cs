@@ -7,6 +7,9 @@ using System;
 namespace Mod.CustomCampaigns
 {
     /*
+     * Added:
+     * Custom Campaigns should no longer show the reset hint text 
+     * 
      * To Add:
      * Make it remember progress through a campaign - DUBIOUS???
      * Give them custom descriptions based on their Steam Collection description
@@ -23,7 +26,7 @@ namespace Mod.CustomCampaigns
         //Mod Details
         private const string modGUID = "Distance.CustomCampaigns";
         private const string modName = "Custom Campaigns";
-        private const string modVersion = "1.1.0";
+        private const string modVersion = "1.1.1";
 
         //Config Entries
 

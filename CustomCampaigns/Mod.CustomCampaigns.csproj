@@ -60,10 +60,12 @@
   <ItemGroup>
     <Compile Include="Extensions\Assembly-CSharp\LevelPlaylist.cs" />
     <Compile Include="Extensions\mscorlib\System\String.cs" />
+    <Compile Include="Patches\Assembly-CSharp\AdventureMode\OnEventCarInstantiate.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelGridGrid\PushGrid.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelGridMenu\AddEntry.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelGridMenu\CreateEntries.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelGridMenu\SetDisplayedInfoForSelectedPlaylist.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelIntroTitleLogic\Start.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelLoadingOverlay\SetMainTexture.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelPlaylist\Load.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelPlaylist\Create.cs" />
