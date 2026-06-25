@@ -31,6 +31,7 @@ namespace Mod.CustomCampaigns.Scripts
 				//Mod.Log.LogInfo("Pressed the Menu Special Button");
 				LevelSet set = new LevelSet();
 				set.resourcesLevelNameAndPathPairsInSet_ = grid_.playlist_.GetLevelSet();
+				//foreach(LevelNameAndPathPair LNP in set.resourcesLevelNameAndPathPairsInSet_) { Mod.Log.LogInfo("Name: " + LNP.levelName_ + " Path: " + LNP.levelPath_); }
 
 				grid_.levelGridMenu_.menuPanelManager_.ShowOkCancel($"Create a campaign out of the [c][9480e7]{grid_.playlist_.playlistName_}[-][c] playlist?", "Create Campaign",
 					new MessagePanelLogic.OnButtonClicked(() =>

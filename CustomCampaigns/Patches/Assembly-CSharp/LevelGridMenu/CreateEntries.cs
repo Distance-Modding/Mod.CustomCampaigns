@@ -109,15 +109,20 @@ namespace Mod.CustomCampaigns.Patches
             {
                 //Mod.Log.LogInfo("This is where the link gets searched for on Steam");
 
-                errorMessage = "This feature is not implemented yet. Sorry!";
-                //OnPanelPop?
-                return false;
-                //errorMessage = "";
-                //return false;
+                if (Mod.Instance.ValidateUrl(input, out errorMessage))
+                {
+                    Mod.Instance.StartCoroutine(Mod.Instance.ParseCollection(input));
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
 
             private void InputPop()
             {
+                //Pop is when the menu closes
                 //Mod.Log.LogInfo("Pop happens at this time!");
             }
         }
