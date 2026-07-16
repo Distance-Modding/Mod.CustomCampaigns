@@ -11,8 +11,6 @@ namespace Mod.CustomCampaigns
 {
     /*
      * Added:
-     * The Add Campaign Button works!!!!!!!!!!!!
-     * Sector posters should function in Lost To Echoes mode as well
      * 
      * To Add:
      * Make it remember progress through a campaign - DUBIOUS???
@@ -32,7 +30,7 @@ namespace Mod.CustomCampaigns
         //Mod Details
         private const string modGUID = "Distance.CustomCampaigns";
         private const string modName = "Custom Campaigns";
-        private const string modVersion = "2.0.0";
+        private const string modVersion = "2.0.1";
 
         //Config Entries
 
@@ -147,12 +145,12 @@ namespace Mod.CustomCampaigns
 
             try
             {
-                Log.LogInfo("This is definitely a web page I'm looking at! :3");
+                //Log.LogInfo("This is definitely a web page I'm looking at! :3");
                 string requestHTML = request.downloadHandler.text;
-                Log.LogInfo(requestHTML);
+                //Log.LogInfo(requestHTML);
                 if (requestHTML.Contains("<span class=\"breadcrumb_separator\">&gt;&nbsp;</span><a data-panel=\"{&quot;noFocusRing&quot;:true}\" href=\"https://steamcommunity.com/workshop/browse/?section=collections&appid=233610\">Collections</a>"))
                 {
-                    Log.LogInfo("This confirms that this is a Distance workshop collection!");
+                    //Log.LogInfo("This confirms that this is a Distance workshop collection!");
                     Regex MatchAllIDs = new Regex(@"(?<={""id"":"")\d*");
                     if (MatchAllIDs.IsMatch(requestHTML))
                     {
@@ -190,7 +188,7 @@ namespace Mod.CustomCampaigns
                     if (matchTitle.IsMatch(requestHTML))
                     {
                         Match mTitle = matchTitle.Match(requestHTML);
-                        Log.LogInfo("Title: " + mTitle.Value);
+                        //Log.LogInfo("Title: " + mTitle.Value);
                         campaignTitle = mTitle.Value;
                     }
 
@@ -199,7 +197,7 @@ namespace Mod.CustomCampaigns
                     {
                         Match mDesc = matchDescription.Match(requestHTML);
                         string betterDesc = mDesc.Value.Replace("<br>", "\n");
-                        Log.LogInfo("Description: " + betterDesc);
+                        //Log.LogInfo("Description: " + betterDesc);
                         campaignDesc = betterDesc;
                     }
                     else

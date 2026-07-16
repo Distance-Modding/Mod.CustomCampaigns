@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using Steamworks;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,6 +21,7 @@ namespace Mod.CustomCampaigns.Patches
                 {
 
                     __instance.CreateAndAddEntry(playlist, LevelGridMenu.PlaylistEntry.Type.Campaign, true);
+                    
                 }
 
                 string[] legacyFileNames = G.Sys.LevelSets_.LegacyFileNames_;
@@ -83,26 +83,17 @@ namespace Mod.CustomCampaigns.Patches
 
         private class AddCampaignEntry : LevelGridMenu.PlaylistEntry
         {
-            //This will always be locked. The point of this is overriding On Click.
+            LevelGridMenu gridMenu;
+
             public AddCampaignEntry(LevelGridMenu menu, LevelPlaylist playlist) : base(menu, "Add Campaign", playlist, Type.Official, false, UnlockStyle.None, true)
             {
-                //Gee I hope this works
+                gridMenu = menu;
             }
 
             public override void OnClick()
             {
                 InputPromptPanel.Create(new InputPromptPanel.OnSubmit(SearchCollectionOnSteam), new InputPromptPanel.OnPop(InputPop), "Enter Campaign Link:");
-                //Mod.Log.LogInfo("I clicked the Campaign Button :D   AND SOMETHING HAPPENED");
-                //https://steamcommunity.com/sharedfiles/filedetails/?id=1933353754 This is the Dakka Map Pack
-                /*UGCQueryHandle_t CollectionQuery = SteamUGC.CreateQueryUGCDetailsRequest(new PublishedFileId_t[1]
-                                                    {
-                                                        new PublishedFileId_t((ulong)1933353754)
-                                                    }, (uint)5);
-
-                SteamAPICall_t CollectionSearch = SteamUGC.SendQueryUGCRequest(CollectionQuery);*/
-
-                
-                
+                gridMenu.gameObject.SetActive(false);
             }
 
             private bool SearchCollectionOnSteam(out string errorMessage, string input)
@@ -122,8 +113,7 @@ namespace Mod.CustomCampaigns.Patches
 
             private void InputPop()
             {
-                //Pop is when the menu closes
-                //Mod.Log.LogInfo("Pop happens at this time!");
+                gridMenu.gameObject.SetActive(true);
             }
         }
     }
